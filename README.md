@@ -1,7 +1,7 @@
 # MySQL_Library-Management-System
 MySQL Comprehensive Assignment - Library Management System
 
-_Please check the link below:_
+_Please check the link below for the screenshots:_
 https://docs.google.com/document/d/1pdP366Yf56wINTYIUODGqyj_v-U3brAgR5uFPfXV1KM/edit#heading=h.p5g9ra8kwgru
 
 **MYSQL Comprehensive Assessment	**	
