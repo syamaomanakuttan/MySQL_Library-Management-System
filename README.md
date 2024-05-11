@@ -191,6 +191,7 @@ Insights:
 This query selects the specified columns from the "Books" table and filters the results to only include books where the status is 'yes', indicating that the book is available for rental.
 
 2. List the employee names and their respective salaries in descending order of salary. 
+
 SELECT Emp_name, Salary
 FROM Employee
 ORDER BY Salary DESC;
@@ -199,6 +200,7 @@ Insights:
 This query selects the employee names and their salaries from the "Employee" table and orders the results by the "Salary" column in descending order.
 
 3. Retrieve the book titles and the corresponding customers who have issued those books. 
+
 SELECT Books.Book_title, Customer.Customer_name
 FROM IssueStatus
 JOIN Customer ON IssueStatus.Issued_cust = Customer.Customer_Id
@@ -208,6 +210,7 @@ Insights:
 This query joins the "IssueStatus" table with the "Customer" table based on the customer ID who issued the books and then joins the "Books" table based on the ISBN of the issued books. It retrieves the book titles from the "Books" table and the corresponding customer names from the "Customer" table.
 
 4. Display the total count of books in each category. 
+
 SELECT Category, COUNT(*) AS Total_Count
 FROM Books
 GROUP BY Category;
@@ -216,6 +219,7 @@ Insights:
 This query selects the "Category" column from the "Books" table and counts the number of occurrences of each category using the COUNT(*) function. It groups the results by the "Category" column.
 
 5. Retrieve the employee names and their positions for the employees whose salaries are above Rs.50,000. 
+
 SELECT Emp_name, Position
 FROM Employee
 WHERE Salary > 50000;
@@ -224,6 +228,7 @@ Insights:
 This query selects the employee names and their positions from the "Employee" table where the salary is greater than Rs. 50,000.
 
 6. List the customer names who registered before 2022-01-01 and have not issued any books yet. 
+
 SELECT Customer_name
 FROM Customer
 WHERE Reg_date < '2022-01-01'
@@ -236,6 +241,7 @@ Insights:
 This query retrieves the names of customers from the "Customer" table where the registration date is before January 1, 2022, and their customer IDs do not appear in the "Issued_cust" column of the "IssueStatus" table, indicating that they have not issued any books yet.
 
 7. Display the branch numbers and the total count of employees in each branch. 
+
 SELECT Branch_no, COUNT(*) AS Total_Employees
 FROM Employee
 GROUP BY Branch_no;
@@ -244,6 +250,7 @@ Insights:
 This query selects the "Branch_no" column from the "Employee" table and counts the number of employees in each branch using the COUNT(*) function. It groups the results by the "Branch_no" column.
 
 8. Display the names of customers who have issued books in the month of June 2023.
+
 SELECT DISTINCT Customer.Customer_name
 FROM Customer
 JOIN IssueStatus ON Customer.Customer_Id = IssueStatus.Issued_cust
@@ -253,6 +260,7 @@ Insights:
 This query joins the "Customer" table with the "IssueStatus" table based on the customer ID who issued the books. It retrieves the distinct customer names from the "Customer" table where the issue date is in June 2023.
 
 9. Retrieve book_title from the book table containing history. 
+
 SELECT Book_title
 FROM Books
 WHERE Category = 'History';
@@ -261,6 +269,7 @@ Insights:
 This query selects the "Book_title" from the "Books" table where the category is 'History'. It retrieves all book titles that fall under the category of History.
 
 10.Retrieve the branch numbers along with the count of employees for branches having more than 5 employees
+
 SELECT Branch_no, COUNT(*) AS Total_Employees
 FROM Employee
 GROUP BY Branch_no
@@ -270,6 +279,7 @@ Insights:
 This query selects the branch numbers from the "Employee" table and counts the number of employees in each branch using the COUNT(*) function. It groups the results by the "Branch_no" column and includes only those branches that have more than 5 employees using the HAVING clause.
 
 11. Retrieve the names of employees who manage branches and their respective branch addresses.
+
 SELECT Employee.Emp_name, Branch.Branch_address
 FROM Employee
 JOIN Branch ON Employee.Branch_no = Branch.Branch_no
@@ -279,6 +289,7 @@ Insights:
 This query joins the "Employee" table with the "Branch" table based on the branch number. It retrieves the employee names and branch addresses where the employee's position is 'Manager'.
 
 12.  Display the names of customers who have issued books with a rental price higher than Rs. 25.
+
 SELECT DISTINCT Customer.Customer_name
 FROM Customer
 JOIN IssueStatus ON Customer.Customer_Id = IssueStatus.Issued_cust
