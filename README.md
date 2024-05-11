@@ -63,6 +63,7 @@ CREATE DATABASE IF NOT EXISTS library;
 USE library;
 
 -- Branch table
+
 CREATE TABLE Branch (
     Branch_no INT PRIMARY KEY,
     Manager_Id INT,
@@ -71,6 +72,7 @@ CREATE TABLE Branch (
 );
 
 -- Employee table
+
 CREATE TABLE Employee (
     Emp_Id INT PRIMARY KEY,
     Emp_name VARCHAR(100),
@@ -81,6 +83,7 @@ CREATE TABLE Employee (
 );
 
 -- Books table
+
 CREATE TABLE Books (
     ISBN VARCHAR(20) PRIMARY KEY,
     Book_title VARCHAR(255),
@@ -92,6 +95,7 @@ CREATE TABLE Books (
 );
 
 -- Customer table
+
 CREATE TABLE Customer (
     Customer_Id INT PRIMARY KEY,
     Customer_name VARCHAR(100),
@@ -100,6 +104,7 @@ CREATE TABLE Customer (
 );
 
 -- IssueStatus table
+
 CREATE TABLE IssueStatus (
     Issue_Id INT PRIMARY KEY,
     Issued_cust INT,
@@ -111,6 +116,7 @@ CREATE TABLE IssueStatus (
 );
 
 -- ReturnStatus table
+
 CREATE TABLE ReturnStatus (
     Return_Id INT PRIMARY KEY,
     Return_cust INT,
@@ -124,6 +130,7 @@ CREATE TABLE ReturnStatus (
 
 
 -- Inserting into Branch table
+
 INSERT INTO Branch (Branch_no, Manager_Id, Branch_address, Contact_no) 
 VALUES 
 (1, 101, '123 Main St', '123-456-7890'),
@@ -133,6 +140,7 @@ VALUES
 (5, 105, '654 Pine St', '789-012-3456');
 
 -- Inserting into Employee table
+
 INSERT INTO Employee (Emp_Id, Emp_name, Position, Salary, Branch_no) 
 VALUES 
 (201, 'John Doe', 'Manager', 50000.00, 1),
@@ -142,6 +150,7 @@ VALUES
 (205, 'David Wilson', 'Clerk', 30000.00, 5);
 
 -- Inserting into Books table
+
 INSERT INTO Books (ISBN, Book_title, Category, Rental_Price, Status, Author, Publisher) 
 VALUES 
 ('978-0061120084', 'To Kill a Mockingbird', 'Fiction', 5.99, 'yes', 'Harper Lee', 'HarperCollins'),
@@ -151,6 +160,7 @@ VALUES
 ('978-0553212457', 'Pride and Prejudice', 'Romance', 5.99, 'yes', 'Jane Austen', 'Bantam Classics');
 
 -- Inserting into Customer table
+
 INSERT INTO Customer (Customer_Id, Customer_name, Customer_address, Reg_date) 
 VALUES 
 (301, 'Alice Johnson', '789 Oak St', '2024-05-01'),
@@ -160,6 +170,7 @@ VALUES
 (305, 'Eva Parker', '321 Maple St', '2024-05-05');
 
 -- Inserting into IssueStatus table
+
 INSERT INTO IssueStatus (Issue_Id, Issued_cust, Issued_book_name, Issue_date, Isbn_book) 
 VALUES 
 (401, 301, 'To Kill a Mockingbird', '2024-05-05', '978-0061120084'),
@@ -169,6 +180,7 @@ VALUES
 (405, 305, 'Pride and Prejudice', '2024-05-09', '978-0553212457');
 
 -- Inserting into ReturnStatus table
+
 INSERT INTO ReturnStatus (Return_Id, Return_cust, Return_book_name, Return_date, Isbn_book2) 
 VALUES 
 (501, 301, 'To Kill a Mockingbird', '2024-05-10', '978-0061120084'),
@@ -181,6 +193,7 @@ Insights:
 These SQL queries will create the database "library" along with the specified tables and their attributes. The necessary foreign key constraints have been added to maintain referential integrity between related tables. And inserted 5 rows of sample data into each of the tables.
 
 Display all the tables and Write the queries for the following :
+
 1. Retrieve the book title, category, and rental price of all available books. 
 
 SELECT Book_title, Category, Rental_Price
